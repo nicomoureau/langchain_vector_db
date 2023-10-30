@@ -28,7 +28,7 @@ if __name__ == "__main__":
     
     qa = RetrievalQA.from_chain_type(llm=OpenAI(), chain_type="stuff", retriever=docsearch.as_retriever())
    
-    query="What is a vector database? Give me a 15 word answer for a beginner."
+    query="Enter your query here"
     
     result = qa.run(query)
     
