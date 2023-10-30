@@ -20,8 +20,6 @@ if __name__ == "__main__":
     text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
     texts = text_splitter.split_documents(document)
     
-    #print(len(texts))
-    
     embeddings = OpenAIEmbeddings(openai_api_key=os.getenv("OPEN_API_KEY"))
     
     docsearch = Pinecone.from_documents(texts, embeddings, index_name="blogs-embeddings-index")
